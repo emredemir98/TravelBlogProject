@@ -1,0 +1,29 @@
+﻿@using TravelTripProje.Models.Sınıflar
+@model List<Blog>
+<div class="padding1">
+    <h4>En Beğendiğim Yerler</h4>
+
+    @{ int i = 0;}
+    @foreach (var x in Model)
+    {
+        i++;
+        var ss = "box-left";
+        var sa = "bot-desc";
+        if (i%2==0)
+        {
+            ss = "box1-left";
+            sa = "bot-desc1";
+        }
+        <div class="@ss">
+            <div class="bot-img">
+                <img src=@x.BlogImage alt="" />
+            </div>
+            <div class="@sa">
+                <p>@x.Aciklama.Substring(0, 100)... </p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+
+    
+</div>

@@ -1,0 +1,51 @@
+﻿@model TravelTripProje.Models.Sınıflar.Blog
+@{
+    ViewBag.Title = "YeniBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Blog Ekle</h4>
+
+    <!-- Basic Layout -->
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4">
+                
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            @Html.LabelFor(x => x.Baslik, new { @class = "form-label" })
+                            
+                            @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" , placeholder = "Baslik",type="text" })
+                           
+                        </div>
+                        <div class="mb-3">
+                            @Html.LabelFor(x => x.Tarih, new { @class = "form-label" })
+
+                            @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", placeholder = "Tarih", type = "text" })
+                            
+                        </div>
+                        <div class="mb-3">
+
+                            @Html.LabelFor(x => x.BlogImage, new { @class = "form-label" })
+                           
+
+                            <div class="input-group input-group-merge">
+
+                                @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control", placeholder = "john.doe", type = "text" })
+                            </div>
+                            @*<div class="form-text">You can use letters, numbers & periods</div>*@
+                        </div>
+                       
+                        <div class="mb-3">
+                            @Html.LabelFor(x => x.Aciklama, new { @class = "form-label" })
+                            
+                            @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control", placeholder = "Açıklama Yaz", type = "text" })
+                        </div>
+                        <button type="submit" class="btn btn-primary">Blog Ekle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿@model TravelTripProje.Models.Sınıflar.Yorumlar
+
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+@using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+{
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Yorum Güncelleme Sayfası</h4>
+
+        <!-- Basic Layout -->
+        <div class="row">
+            <div class="col-xl">
+                <div class="card mb-4">
+                    
+                    <div class="card-body">
+
+                        <div class="mb-3">
+                            @Html.HiddenFor(x => x.ID)
+
+                        </div>
+                        <div class="mb-3">
+                            @Html.LabelFor(x => x.KullaniciAdi, new { @class = "form-label" })
+
+                            @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control", placeholder = "KullaniciAdi", type = "text" })
+
+                        </div>
+                        <div class="mb-3">
+                            @Html.LabelFor(x => x.Mail, new { @class = "form-label" })
+
+                            @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", placeholder = "Mail", type = "text" })
+
+                        </div>
+                        @Html.HiddenFor(x => x.Onay)
+
+                        <div class="mb-3">
+                            @Html.LabelFor(x => x.Yorum, new { @class = "form-label" })
+
+                            @Html.TextAreaFor(x => x.Yorum, 15, 1, new { @class = "form-control", placeholder = "Yorum", type = "text" })
+                        </div>
+                        <button class="btn btn-success">Yorumu Güncelle</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

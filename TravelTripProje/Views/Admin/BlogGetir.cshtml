@@ -1,0 +1,61 @@
+﻿@model TravelTripProje.Models.Sınıflar.Blog
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
+{
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Blog Güncelleme Sayfası</h4>
+
+        <!-- Basic Layout -->
+        <div class="row">
+            <div class="col-xl">
+                <div class="card mb-4">
+                   
+                    <div class="card-body">
+
+                        <div class="mb-3">
+                            @Html.HiddenFor(x => x.ID)
+
+                        </div>
+                        <div class="mb-3">
+                            @Html.LabelFor(x => x.Baslik, new { @class = "form-label" })
+
+                            @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", placeholder = "Baslik", type = "text" })
+
+                        </div>
+                        <div class="mb-3">
+                            @Html.LabelFor(x => x.Tarih, new { @class = "form-label" })
+
+                            @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", placeholder = "Tarih", type = "text" })
+
+                        </div>
+                        <div class="mb-3">
+
+                            @Html.LabelFor(x => x.BlogImage, new { @class = "form-label" })
+
+
+                            <div class="input-group input-group-merge">
+
+                                @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control", placeholder = "john.doe", type = "text" })
+                            </div>
+                            @*<div class="form-text">You can use letters, numbers & periods</div>*@
+                        </div>
+
+                        <div class="mb-3">
+                            @Html.LabelFor(x => x.Aciklama, new { @class = "form-label" })
+
+                            @Html.TextAreaFor(x => x.Aciklama, 15, 1, new { @class = "form-control", placeholder = "Açıklama Yaz", type = "text" })
+                        </div>
+                        <button  class="btn btn-success">Blogu Güncelle</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
